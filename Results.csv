@@ -1,4 +1,4 @@
-detector type,Keypoint detection time(ms),detected points,ROI points,descriptor type,descriptor time taken(ms),matcher type,selector type,Matcher time taken(ms),No of matched points,chec
+detector type,Keypoint detection time(ms),detected points,ROI points,descriptor type,descriptor time taken(ms),matcher type,selector type,Matcher time taken(ms),No of matched points
 HARRIS,31.1521,339,52,FREAK,52.2755,NA,NA,NA,NA
 HARRIS,28.7235,286,40,FREAK,49.5191,MAT_BF,SEL_KNN,0.291522,19
 HARRIS,25.7662,349,63,FREAK,48.574,MAT_BF,SEL_KNN,0.269427,3
