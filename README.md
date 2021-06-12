@@ -42,6 +42,23 @@ Your fourth task is to implement a variety of keypoint descriptors to the alread
 
 * Please have a look here [solution](https://github.com/harisiva1/2D-Feature-Tracking---SFND/blob/9d30a61e16d9f8e5fc3382d9c7ce7608c890ffd5/src/matching2D_Student.cpp) from line 60 to 111 and [solution2](https://github.com/harisiva1/2D-Feature-Tracking---SFND/blob/9d30a61e16d9f8e5fc3382d9c7ce7608c890ffd5/src/MidTermProject_Camera_Student.cpp) line 202
 
+# TASK 5 and 6
+
+Your fifth task will focus on the matching part. The current implementation uses Brute Force matching combined with Nearest-Neighbor selection. You must now add FLANN as an alternative to brute-force as well as the K-Nearest-Neighbor approach.As your sixth task, you will then implement the descriptor distance ratio test as a filtering method to remove bad keypoint matches.
+
+* Please have a look here [solution](https://github.com/harisiva1/2D-Feature-Tracking---SFND/blob/9d30a61e16d9f8e5fc3382d9c7ce7608c890ffd5/src/matching2D_Student.cpp) from line 8 to 57 and [solution2](https://github.com/harisiva1/2D-Feature-Tracking---SFND/blob/9d30a61e16d9f8e5fc3382d9c7ce7608c890ffd5/src/MidTermProject_Camera_Student.cpp) from line 212 to 237
+
+# TASK 7,8 and 9
+
+* count the number of keypoints on the preceding vehicle for all 10 images and take note of the distribution of their neighborhood size. Do this for all the detectors you have implemented.
+* count the number of matched keypoints for all 10 images using all possible combinations of detectors and descriptors. In the matching step, use the BF approach with the descriptor distance ratio set to 0.8.
+* Your ninth task is to log the time it takes for keypoint detection and descriptor extraction. The results must be entered into a spreadsheet and based on this information you will then suggest the TOP3 detector / descriptor combinations as the best choice for our purpose of detecting keypoints on vehicles. 
+
+please check solution for logging here [solution](https://github.com/harisiva1/2D-Feature-Tracking---SFND/blob/9d30a61e16d9f8e5fc3382d9c7ce7608c890ffd5/src/MidTermProject_Camera_Student.cpp) from line 29 to 82.
+
+Logged Results are [here](https://github.com/harisiva1/2D-Feature-Tracking---SFND/blob/0e42b1491632ec9072c89e600561f13359198e25/Results.csv)
+
+
 
 ## Dependencies for Running Locally
 * cmake >= 2.8
