@@ -1,0 +1,64 @@
+mp.1 Data buffer optimization
+implemented a if loop to compare data buffer size and oce it exceed 3 removed 
+the oldest frame using erase option.
+
+mp.2 keypoint detection 
+implemeted all methods in matching2d_student.cpp and can be selected by string type
+reference: opencv for templates and i used udacity solution code for harris corner detection and non maximum suppression.
+
+mp.3 keypoint removal
+checked whether the keypoints are with in rectangle using boundary condition in 
+if loop and stored it in newly created fp (vector of keypoints) and later copied 
+it to original variable keypoints.
+
+mp.4  keypoint descriptors
+implemeted all methods in matching2d_student.cpp and can be selected by string type
+reference: opencv for templates
+
+mp.5  descriptor matching
+implemeted FLANN and knn method in matching2d_student.cpp and can be selected by string type
+reference: udacity lesson and solution code.
+
+mp.6  lowes ratio test
+implemented lowes ratio test in matching2d_student.cpp
+
+mp.7 perf eval 1
+counted the keypoints size and stored it in the address of keypoints
+
+mp.8 perf eval 2
+created a new structure called mc in datastructures.h.
+defined  detectors,descriptors,matcher and selectoe const vector of strings
+for loop to find all possible combinations and stored it in diff_combo variable.
+later iterated throught this diff_c	ombo variable and stored results.
+
+mp.9 perf eval 3
+logged the results.please refer Results.csv/results.xlsx under SFND_2D_FEATURE_MATCHING
+
+TOP3 COMBINATIONS.
+Time--> detector+descriptor+matcher time
+1.since our focus is only on the preceding vehicle i thought keypoints in the range
+50-60 willbe enough and below results are based on that criteria.
+DETECTOR	DESCRIPTOR	TIME(ms)	MATCHED PAIR
+ORB			BRISK			5,58		53
+ORB			ORB			6,2			57
+ORB			BRIEF			6,23		56
+
+2.another case if we take highest no of matches with less time then the top3 will be
+DETECTOR	DESCRIPTOR	TIME(ms)	MATCHED PAIR
+FAST			BRIEF			9,13		258
+FAST			ORB			9,11		245
+FAST			BRISK			21,5		213
+
+Although SIFT produces the highest no of matched pairs(334) it taked 
+more time(60ms).
+
+can you provide some useful links for reading wherever you feel my functional logic code can be improved or optimized.
+also for csv file logging please provide some links for reading. 
+
+
+
+
+
+
+
+ 
