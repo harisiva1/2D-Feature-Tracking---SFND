@@ -1,8 +1,13 @@
-# SFND 2D Feature Tracking
+# OVERVIEW
+
+The idea of the camera course is to build a collision detection system - that's the overall goal for the Final Project.
+![OVERVIEW](https://user-images.githubusercontent.com/68550704/121785415-f4b7b300-cbb9-11eb-8038-2046a29ba05b.png)
+
+# SFND 2D Feature Tracking - Midterm Project
 
 <img src="images/keypoints.png" width="820" height="248" />
 
-The idea of the camera course is to build a collision detection system - that's the overall goal for the Final Project. As a preparation for this, you will now build the feature tracking part and test various detector / descriptor combinations to see which ones perform best. This mid-term project consists of four parts:
+As a preparation for this, you will now build the feature tracking part and test various detector / descriptor combinations to see which ones perform best.Here we will be Programming 1,5,6,7 tasks which is numbered in the above image.This mid-term project consists of four parts:
 
 * First, you will focus on loading images, setting up data structures and putting everything into a ring buffer to optimize memory load. 
 * Then, you will integrate several keypoint detectors such as HARRIS, FAST, BRISK and SIFT and compare them with regard to number of keypoints and speed. 
@@ -10,6 +15,33 @@ The idea of the camera course is to build a collision detection system - that's 
 * In the last part, once the code framework is complete, you will test the various algorithms in different combinations and compare them with regard to some performance measures. 
 
 See the classroom instruction and code comments for more details on each of these parts. Once you are finished with this project, the keypoint matching part will be set up and you can proceed to the next lesson, where the focus is on integrating Lidar points and on object detection using deep-learning. 
+
+# TASK 1
+
+Your first task is to set up the loading procedure for the images, which is currently not optimal. In the student version of the code, we push all images into a vector inside a for-loop and with every new image, the data structure grows. Now imagine you want to process a large image sequence with several thousand images and Lidar point clouds over night - in the current implementation this would push the memory of your computer to its limit and eventually slow down the entire program. So in order to prevent this, we only want to hold a certain number of images in memory so that when a new one arrives, the oldest one is deleted from one end of the vector and the new one is added to the other end.
+
+* Please check [solution](https://github.com/harisiva1/2D-Feature-Tracking---SFND/blob/9d30a61e16d9f8e5fc3382d9c7ce7608c890ffd5/src/MidTermProject_Camera_Student.cpp) from line 106-112
+
+# TASK 2
+
+Please implement a selection of alternative detectors, which are HARRIS,SHI TOMASI, FAST, BRISK, ORB, AKAZE, and SIFT
+
+* please check [solution](https://github.com/harisiva1/2D-Feature-Tracking---SFND/blob/9d30a61e16d9f8e5fc3382d9c7ce7608c890ffd5/src/matching2D_Student.cpp) from line 114 to 289 and [solution2](https://github.com/harisiva1/2D-Feature-Tracking---SFND/blob/9d30a61e16d9f8e5fc3382d9c7ce7608c890ffd5/src/MidTermProject_Camera_Student.cpp) from line 131 to 145.
+
+# TASK 3
+
+In a later part of the mid-term project, you will be evaluating the various detectors and descriptors with regard to a set of performance metrics. As we are focussing on a collision detection system in this course, keypoints on the preceding vehicle are of special interest to us. Therefore, in order to enable a more targeted evaluation, we want to discard feature points that are not located on the preceding vehicle.
+
+Your third task, therefore, is to remove all keypoints outside of a bounding box around the preceding vehicle. Box parameters you should use are : cx = 535, cy = 180, w = 180, h = 150
+
+* Please check solution here [solution](https://github.com/harisiva1/2D-Feature-Tracking---SFND/blob/9d30a61e16d9f8e5fc3382d9c7ce7608c890ffd5/src/MidTermProject_Camera_Student.cpp) from line 155 to 169
+
+# TASK 4
+
+Your fourth task is to implement a variety of keypoint descriptors to the already implemented BRISK method and make them selectable using the string 'descriptorType'. The methods you must integrate are BRIEF, ORB, FREAK, AKAZE and SIFT.
+
+* Please have a look here [solution](https://github.com/harisiva1/2D-Feature-Tracking---SFND/blob/9d30a61e16d9f8e5fc3382d9c7ce7608c890ffd5/src/matching2D_Student.cpp) from line 60 to 111 and [solution2](https://github.com/harisiva1/2D-Feature-Tracking---SFND/blob/9d30a61e16d9f8e5fc3382d9c7ce7608c890ffd5/src/MidTermProject_Camera_Student.cpp) line 202
+
 
 ## Dependencies for Running Locally
 * cmake >= 2.8
